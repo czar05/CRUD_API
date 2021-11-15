@@ -1,10 +1,12 @@
 const express = require("express");
 const app = express();
-const port = 7000;
+const dotenv = require('dotenv').config();
+const port = process.env.PORT;
 const db = require('./config/mongoose');
 const Product = require('./models/product');
 const passport = require('./config/passport_Jwt')
 // const router = require("./routes/index");
+
 app.use(passport.initialize());
 app.use(express.json());
 

@@ -32,7 +32,7 @@ module.exports.login = async (req, res)=> {
         const token = await jwt.sign({
            name : user.name,
            id: user.id
-        },"bcjbkdv");
+        },process.env.JWT_SECRET);
 
         return res.status(200).json({
             success: true,
