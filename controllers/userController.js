@@ -41,6 +41,7 @@ module.exports.login = async (req, res)=> {
             },
         })
     } catch (error) {
-        return res.status(500).json({success : false, data: "server error"});
+        console.log("error :", error);
+        return res.status(500).json({success : false, data: error});
     }
 }

@@ -1,5 +1,17 @@
 const express = require("express");
 const app = express();
+const mongoose = require('mongoose');
+const DB = 'mongodb+srv://czar05:aayushi%4005@cluster0.feyp0.mongodb.net/crud_api?retryWrites=true&w=majority';
+mongoose.connect(DB , {
+  useNewUrlParser : true,
+  // useCreateIndex : true,
+  useUnifiedTopology : true,
+  // useFindAndModify : false
+}).then(() => {
+    console.log(`connection successful`);
+}).catch((err) => {
+  console.log(`no connection`);
+});
 const dotenv = require('dotenv').config();
 const port = process.env.PORT;
 const db = require('./config/mongoose');
